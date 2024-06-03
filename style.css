@@ -1,0 +1,119 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  background-color: #121212;
+  position: relative;
+}
+
+.container .wrapper .inputs {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(40px, 1fr));
+  gap: 4px;
+  z-index: 9999;
+}
+
+.inputs #equal {
+  background-color: #e42911;
+}
+.inputs #equal:hover {
+  background-color: #e47011;
+  box-shadow: 0 0 40px 0 rgba(241, 156, 28, 0.26);
+}
+
+.wrapper .display_values {
+  color: #e42911;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+}
+
+.wrapper {
+  background: rgba(49, 49, 49, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 4px;
+  padding: 2rem;
+  width: 30rem;
+  margin: 2rem;
+}
+
+.input_values {
+  text-align: right;
+  width: calc(100% - 4px);
+  padding: 1rem 0;
+  font-size: 2rem;
+  border-radius: 8px;
+  color: #fafafa;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.display_values {
+  text-align: right;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  color: #fafafa;
+  font-weight: bold;
+}
+
+.input_values,
+.display_values {
+  transition: all 0.3s ease;
+}
+
+.inputs button {
+  padding: 16px 0;
+  width: 100%;
+  background: none;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  transition: all .3s ease-in-out;
+  color: #fafafa;
+}
+
+.inputs button:hover {
+  background: rgba(255, 255, 255, 0.836);
+  color: #121212;
+  box-shadow: 0 0 40px 0 rgba(226, 224, 224, 0.267);
+  font-weight: bold;
+}
+
+@media (max-width: 540px) and (max-height: 927px) {
+  .container .wrapper {
+    padding-bottom: 2rem;
+    margin: 0;
+  }
+}
+@media (max-width: 1024px) and (max-height: 1368px){
+  .container .wrapper {
+    padding-top: 70vh;
+    padding-bottom: 2rem;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+
+/* .mask {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-color: #dfd9d9;
+  border-radius: 50%;
+  box-shadow: 0 0px 32px 0 rgba(228, 227, 226, 0.856);
+  transition: all 100ms ease;
+  z-index: -99;
+} */
