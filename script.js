@@ -7,7 +7,7 @@ const operators = ["+", "-", "/", "*", "%"];
 
 inputs.forEach((input) => {
   input.addEventListener("click", (event) => {
-    inputValues.preventDefault();
+    event.preventDefault();
     const regex = /^[0-9+\-*/.() ]+$/;
     const value = event.target.value;
 
