@@ -4,9 +4,9 @@ const inputs = document.querySelectorAll(".inputs");
 let mask = document.querySelector(".mask");
 const operators = ["+", "-", "/", "*", "%"];
 
+
 inputs.forEach((input) => {
   input.addEventListener("click", (event) => {
-    inputValues.focus();
     const regex = /^[0-9+\-*/.() ]+$/;
     const value = event.target.value;
 
@@ -14,6 +14,7 @@ inputs.forEach((input) => {
       displayValues.style.fontSize = "2rem";
       inputValues.style.fontSize = "1.4rem";
     }
+
 
     if (event.target.id == "number") {
       inputValues.style.fontSize = "2rem";
@@ -33,8 +34,6 @@ inputs.forEach((input) => {
 
       inputValues.style.fontSize = "2rem";
       displayValues.style.fontSize = "1.4rem";
-    } else if (value == "( )") {
-      inputValues.focus();
     } else {
       //checking if the operator more than 1 before adding new number
       if (!value && !regex.test(value) && value == undefined) return;
@@ -44,13 +43,10 @@ inputs.forEach((input) => {
       )
         return (inputValues.value =
           inputValues.value.substring(0, inputValues.value.length - 1) + value);
-      if (operators.includes(inputValues.value[inputValues.value.length - 1])) {
-        
-      }
 
       inputValues.value += value;
       if (operators.includes(inputValues.value[0])) {
-        displayValues.textContent = "= Input number first before operator!";
+        return displayValues.textContent = "= Input number first before operator!";
       }
 
       try {
